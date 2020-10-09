@@ -6,15 +6,25 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_Volunteer Tracker allows non-profit employees to track what project they are currently assigned to._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Open terminal._
+* _Navigate to Desktop._
+* _Type "git clone https://github.com/GBProductions/volunteer-tracker.git" and press ENTER._
+* _Navigate to volunteer-tracker directory folder and type "code ." into command line.
+* _Run "gem install bundler" in command line to install bundler._
+* _Run "bundle install"._
+* _Run application by entering "ruby app.rb" in command line of terminal._
+* _Open browser and enter "localhost:4567" into address bar._
+
+## Specifications
+| Spec    | Behavior | Backend Action Items |
+| ------- | -------- | -------------------- |
+| 1 | Non-profit employee can view, add, update and delete projects. | Create a Project Class and give it full CRUD functionaility. |
+| 2 | Non-profit employee can view and add volunteers. | Create Volunteer Class and give it full CRUD functionality. |
+| 3 | Non-profit employee can add volunteers to a project. | Create a method for Project that can add and remove volunteers. | 
 
 
 ## Known Bugs
