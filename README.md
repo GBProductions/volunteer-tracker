@@ -13,7 +13,7 @@ _Volunteer Tracker allows non-profit employees to track what project they are cu
 * _Open terminal._
 * _Navigate to Desktop._
 * _Type "git clone https://github.com/GBProductions/volunteer-tracker.git" and press ENTER._
-* _Navigate to volunteer-tracker directory folder and type "code ." into command line.
+* _Navigate to volunteer-tracker directory folder and type "code ." into command line._
 * _Run "gem install bundler" in command line to install bundler._
 * _Run "bundle install"._
 * _Run application by entering "ruby app.rb" in command line of terminal._
