@@ -1,6 +1,6 @@
 # _Volunteer Tracker_
 
-#### _{Brief description of application}, October 9th 2020_
+#### _This program will track volunteers: it will say what projects they are working on for a non-profit. October 9th 2020_
 
 #### By _**Garrett Brown**_
 
@@ -27,7 +27,10 @@ _For support, contact Garrett Brown <garrettpaulbrown@gmail.com>_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+* HTML
+* CSS/Bootstrap
+* Ruby
+* Ruby Gems: Sinatra, Rspec, Pry, Sinatra-Contrib, Capybara, PG.
 
 ### License
 
