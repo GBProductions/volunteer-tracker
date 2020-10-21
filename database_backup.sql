@@ -55,22 +55,22 @@ ALTER SEQUENCE public.projects_id_seq OWNED BY public.projects.id;
 
 
 --
--- Name: volunteers; Type: TABLE; Schema: public; Owner: garrettbrown
+-- Name: projects; Type: TABLE; Schema: public; Owner: garrettbrown
 --
 
-CREATE TABLE public.volunteers (
+CREATE TABLE public.projects (
     id integer NOT NULL,
     name character varying
 );
 
 
-ALTER TABLE public.volunteers OWNER TO garrettbrown;
+ALTER TABLE public.projects OWNER TO garrettbrown;
 
 --
--- Name: volunteers_id_seq; Type: SEQUENCE; Schema: public; Owner: garrettbrown
+-- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: garrettbrown
 --
 
-CREATE SEQUENCE public.volunteers_id_seq
+CREATE SEQUENCE public.projects_id_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -79,13 +79,13 @@ CREATE SEQUENCE public.volunteers_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.volunteers_id_seq OWNER TO garrettbrown;
+ALTER TABLE public.projects_id_seq OWNER TO garrettbrown;
 
 --
--- Name: volunteers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: garrettbrown
+-- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: garrettbrown
 --
 
-ALTER SEQUENCE public.volunteers_id_seq OWNED BY public.volunteers.id;
+ALTER SEQUENCE public.projects_id_seq OWNED BY public.projects.id;
 
 
 --
@@ -96,10 +96,10 @@ ALTER TABLE ONLY public.projects ALTER COLUMN id SET DEFAULT nextval('public.pro
 
 
 --
--- Name: volunteers id; Type: DEFAULT; Schema: public; Owner: garrettbrown
+-- Name: projects id; Type: DEFAULT; Schema: public; Owner: garrettbrown
 --
 
-ALTER TABLE ONLY public.volunteers ALTER COLUMN id SET DEFAULT nextval('public.volunteers_id_seq'::regclass);
+ALTER TABLE ONLY public.projects ALTER COLUMN id SET DEFAULT nextval('public.projects_id_seq'::regclass);
 
 
 --
@@ -111,10 +111,10 @@ COPY public.projects (id, name) FROM stdin;
 
 
 --
--- Data for Name: volunteers; Type: TABLE DATA; Schema: public; Owner: garrettbrown
+-- Data for Name: projects; Type: TABLE DATA; Schema: public; Owner: garrettbrown
 --
 
-COPY public.volunteers (id, name) FROM stdin;
+COPY public.projects (id, name) FROM stdin;
 \.
 
 
@@ -126,10 +126,10 @@ SELECT pg_catalog.setval('public.projects_id_seq', 1, false);
 
 
 --
--- Name: volunteers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: garrettbrown
+-- Name: projects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: garrettbrown
 --
 
-SELECT pg_catalog.setval('public.volunteers_id_seq', 1, false);
+SELECT pg_catalog.setval('public.projects_id_seq', 1, false);
 
 
 --
@@ -141,11 +141,11 @@ ALTER TABLE ONLY public.projects
 
 
 --
--- Name: volunteers volunteers_pkey; Type: CONSTRAINT; Schema: public; Owner: garrettbrown
+-- Name: projects projects_pkey; Type: CONSTRAINT; Schema: public; Owner: garrettbrown
 --
 
-ALTER TABLE ONLY public.volunteers
-    ADD CONSTRAINT volunteers_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY public.projects
+    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
 
 
 --

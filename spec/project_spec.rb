@@ -61,15 +61,15 @@ require "spec_helper"
 #     end
 #   end
 
-#   describe '#volunteers' do
-#     it 'returns all volunteers for a specific project' do
+#   describe '#projects' do
+#     it 'returns all projects for a specific project' do
 #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
 #       project.save
-#       volunteer1 = Volunteer.new({:name => 'Jasmine', :project_id => project.id, :id => nil})
-#       volunteer1.save
-#       volunteer2 = Volunteer.new({:name => 'Joe', :project_id => project.id, :id => nil})
-#       volunteer2.save
-#       expect(project.volunteers).to eq [volunteer1, volunteer2]
+#       project1 = project.new({:name => 'Jasmine', :project_id => project.id, :id => nil})
+#       project1.save
+#       project2 = project.new({:name => 'Joe', :project_id => project.id, :id => nil})
+#       project2.save
+#       expect(project.projects).to eq [project1, project2]
 #     end
 #   end
 

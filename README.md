@@ -1,19 +1,19 @@
-# _Volunteer Tracker_
+# _project Tracker_
 
-#### _This program will track volunteers: it will say what projects they are working on for a non-profit. October 9th 2020_
+#### _This program will track projects: it will say what projects they are working on for a non-profit. October 9th 2020_
 
 #### By _**Garrett Brown**_
 
 ## Description
 
-_Volunteer Tracker allows non-profit employees to track what project they are currently assigned to._
+_project Tracker allows non-profit employees to track what project they are currently assigned to._
 
 ## Setup/Installation Requirements
 
 * _Open terminal._
 * _Navigate to Desktop._
-* _Type "git clone https://github.com/GBProductions/volunteer-tracker.git" and press ENTER._
-* _Navigate to volunteer-tracker directory folder and type "code ." into command line._
+* _Type "git clone https://github.com/GBProductions/project-tracker.git" and press ENTER._
+* _Navigate to project-tracker directory folder and type "code ." into command line._
 * _Run "gem install bundler" in command line to install bundler._
 * _Run "bundle install"._
 * _Run application by entering "ruby app.rb" in command line of terminal._
@@ -23,8 +23,8 @@ _Volunteer Tracker allows non-profit employees to track what project they are cu
 | Spec    | Behavior | Backend Action Items |
 | ------- | -------- | -------------------- |
 | 1 | Non-profit employee can view, add, update and delete projects. | Create a Project Class and give it full CRUD functionaility. |
-| 2 | Non-profit employee can view and add volunteers. | Create Volunteer Class and give it full CRUD functionality. |
-| 3 | Non-profit employee can add volunteers to a project. | Create a method for Project that can add and remove volunteers. | 
+| 2 | Non-profit employee can view and add projects. | Create project Class and give it full CRUD functionality. |
+| 3 | Non-profit employee can add projects to a project. | Create a method for Project that can add and remove projects. | 
 
 
 ## Known Bugs

@@ -10,85 +10,85 @@ require("pg")
 DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
-  @words = Word.all
-  erb(:words)
+  @projects = Project.all
+  erb(:projects)
 end
 
-get('/words') do
-  @words = Word.all
-  erb(:words)
+get('/projects') do
+  @projects = Project.all
+  erb(:projects)
 end
 
-get('/words/new') do
-  erb(:new_word)
+get('/projects/new') do
+  erb(:new_project)
 end
 
-get('/words/:id') do
-  @word = Word.find(params[:id].to_i())
-  erb(:word)  
+get('/projects/:id') do
+  @project = project.find(params[:id].to_i())
+  erb(:project)  
 end
 
-post ('/words') do
-  name = params[:word_name]
-  word = Word.new(name, nil)
-  word.save()
-  @words = Word.all()
-  erb(:words)
+post ('/projects') do
+  name = params[:project_name]
+  project = project.new(name, nil)
+  project.save()
+  @projects = project.all()
+  erb(:projects)
 end
 
-get('/words/:id/edit') do
-  @word = Word.find(params[:id].to_i())
-  erb(:edit_word)
+get('/projects/:id/edit') do
+  @project = project.find(params[:id].to_i())
+  erb(:edit_project)
 end
 
-patch('/words/:id') do
-  @word = Word.find(params[:id].to_i())
-  @word.update(params[:name])
-  @words = Word.all
-  erb(:words)
+patch('/projects/:id') do
+  @project = project.find(params[:id].to_i())
+  @project.update(params[:name])
+  @projects = project.all
+  erb(:projects)
 end
 
-delete('/words/:id') do
-  @word = Word.find(params[:id].to_i())
-  @word.delete()
-  @words = Word.all
-  erb(:words)
+delete('/projects/:id') do
+  @project = project.find(params[:id].to_i())
+  @project.delete()
+  @projects = project.all
+  erb(:projects)
 end
 
 get('/custom_route') do
   "Create custom routes."
 end
 
-post('/words') do
-  name = params[:word_name]
-  word = Word.new(name, nil)
-  word.save()
-  @words = Words.all()
-  erb(:words)
+post('/projects') do
+  name = params[:project_name]
+  project = project.new(name, nil)
+  project.save()
+  @projects = projects.all()
+  erb(:projects)
 end
 
-get('/words/:id/definitions/:definition_id') do
-  @definition = Definition.find(params[:definition_id].to_i())
-  erb(:definition)
+get('/projects/:id/volunteers/:volunteer_id') do
+  @volunteer = volunteer.find(params[:volunteer_id].to_i())
+  erb(:volunteer)
 end
 
-post('/words/:id/definitions') do
-  @word = Word.find(params[:id].to_i())
-  definition = Definition.new(params[:definition_name], @word.id, nil)
-  definition.save()
-  erb(:word)
+post('/projects/:id/volunteers') do
+  @project = project.find(params[:id].to_i())
+  volunteer = volunteer.new(params[:volunteer_name], @project.id, nil)
+  volunteer.save()
+  erb(:project)
 end
 
-patch('/words/:id/definitions/:definition_id') do
-  @word = Word.find(params[:id].to_i())
-  definition = Definition.find(params[:definition_id].to_i())
-  definition.update(params[:name], @word.id)
-  erb(:word)
+patch('/projects/:id/volunteers/:volunteer_id') do
+  @project = project.find(params[:id].to_i())
+  volunteer = volunteer.find(params[:volunteer_id].to_i())
+  volunteer.update(params[:name], @project.id)
+  erb(:project)
 end
 
-delete('/words/:id/definitions/:definition_id') do
-  definition = Definition.find(params[:definition_id].to_i())
-  definition.delete
-  @word = Word.find(params[:id].to_i())
-  erb(:word)
+delete('/projects/:id/volunteers/:volunteer_id') do
+  volunteer = volunteer.find(params[:volunteer_id].to_i())
+  volunteer.delete
+  @project = project.find(params[:id].to_i())
+  erb(:project)
 end
