@@ -1,11 +1,12 @@
 class Project
-  attr_reader :id, name
-  attr_accessor :name
+  attr_reader :id, :name
 
+  @@projects = {}
+  @@total_rows = 0
 
-  def initialize(attributes)
-    @name = attributes.fetch(:name)
-    @id = attributes.fetch(:id)
+  def initialize(name, id)
+    @name = name
+    @id = id || @@total_rows += 1
   end
 
   def self.all()
