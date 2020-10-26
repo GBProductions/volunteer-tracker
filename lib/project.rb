@@ -28,12 +28,14 @@ class Project
   end
 
   def self.clear
-    @@projects = {}
-    @@total_rows = 0
+    DB.exec("DELETE FROM projects")
   end
 
   def self.find(id)
-    @@projects[id]
+    project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
+    name = project.fetch("title")
+    id = project.fetch("id").to_i
+    Project.new({:title => title, :id => id})
   end
 
   def update(title)
@@ -41,7 +43,7 @@ class Project
   end
 
   def delete
-    @@projects.delete(self.id)
+    DB.exec("DELETE FROM projects WHERE id = #{@id};")
   end
 
   def volunteers
