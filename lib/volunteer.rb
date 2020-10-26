@@ -9,7 +9,11 @@ class Volunteer
   end
 
   def ==(volunteer_to_compare)
-    (self.title() == volunteer_to_compare.title()) && (self.project_id() == volunteer_to_compare.project_id())
+    if volunteer_to_compare !=nil
+      (self.title() == volunteer_to_compare.title()) && (self.project_id() == volunteer_to_compare.project_id())
+    else 
+      false
+    end
   end
 
   def self.all()
@@ -18,7 +22,7 @@ class Volunteer
     returned_volunteers.each() do |volunteer|
       title = volunteer.fetch("title")
       project_id = volunteer.fetch("project_id").to_i
-      id = song.fetch("id").to_i
+      id = volunteer.fetch("id").to_i
       volunteers.push(Volunteer.new({:title => title, :project_id => project_id, :id => id}))
     end
     volunteers
@@ -30,11 +34,15 @@ class Volunteer
   end
 
   def self.find(id)
-    song = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
-    title = volunteer.fetch("title")
-    project_id = volunteer.fetch("project_id").to_i
-    id = volunteer.fetch("id").to_i
-    Volunteer.new({:title => title, :project_id => project_id, :id => id})
+    volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
+    if volunteer
+      title = volunteer.fetch("title")
+      project_id = volunteer.fetch("project_id").to_i
+      id = volunteer.fetch("id").to_i
+      Volunteer.new({:title => title, :project_id => project_id, :id => id})
+    else
+      nil
+    end
   end
 
   def update(title, project_id)

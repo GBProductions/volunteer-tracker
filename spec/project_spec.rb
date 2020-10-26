@@ -65,11 +65,11 @@ describe Project do
   #   it 'returns all projects for a specific project' do
   #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
   #     project.save
-  #     project1 = project.new({:title => 'Jasmine', :project_id => project.id, :id => nil})
+  #     project1 = Project.new({:title => 'Jasmine', :project_id => project.id, :id => nil})
   #     project1.save
-  #     project2 = project.new({:title => 'Joe', :project_id => project.id, :id => nil})
+  #     project2 = Project.new({:title => 'Joe', :project_id => project.id, :id => nil})
   #     project2.save
-  #     expect(project.projects).to eq [project1, project2]
+  #     expect(Project.projects).to eq [project1, project2]
   #   end
   # end
 
@@ -88,6 +88,17 @@ describe Project do
       project.save
       project.delete
       expect(Project.all).to eq []
+    end
+  end
+
+  describe('#delete') do
+    it("deletes all volunteers belonging to a deleted projects") do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      project.save()
+      volunteer = Volunteer.new({:title => "John", :project_id => project_id, :id => nil})
+      volunteer.save()
+      project.delete()
+      expect(Volunteer.find(volunteer.id)).to(eq(nil))
     end
   end
 end
