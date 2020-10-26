@@ -28,7 +28,7 @@ class Project
   end
 
   def self.clear
-    DB.exec("DELETE FROM projects")
+    DB.exec("DELETE FROM projects *;")
   end
 
   def self.find(id)

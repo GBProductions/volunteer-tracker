@@ -61,17 +61,17 @@ describe Project do
     end
   end
 
-# #   describe '#projects' do
-# #     it 'returns all projects for a specific project' do
-# #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-# #       project.save
-# #       project1 = project.new({:title => 'Jasmine', :project_id => project.id, :id => nil})
-# #       project1.save
-# #       project2 = project.new({:title => 'Joe', :project_id => project.id, :id => nil})
-# #       project2.save
-# #       expect(project.projects).to eq [project1, project2]
-# #     end
-# #   end
+  # describe '#projects' do
+  #   it 'returns all projects for a specific project' do
+  #     project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+  #     project.save
+  #     project1 = project.new({:title => 'Jasmine', :project_id => project.id, :id => nil})
+  #     project1.save
+  #     project2 = project.new({:title => 'Joe', :project_id => project.id, :id => nil})
+  #     project2.save
+  #     expect(project.projects).to eq [project1, project2]
+  #   end
+  # end
 
   # describe '#update' do
   #   it 'allows a user to update a project' do
