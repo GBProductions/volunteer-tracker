@@ -33,13 +33,14 @@ class Project
 
   def self.find(id)
     project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
-    name = project.fetch("title")
+    title = project.fetch("title")
     id = project.fetch("id").to_i
     Project.new({:title => title, :id => id})
   end
 
   def update(title)
     @title = title
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
   end
 
   def delete
