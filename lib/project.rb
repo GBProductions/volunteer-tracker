@@ -12,11 +12,11 @@ class Project
   end
 
   def save
-    @@projects[self.id] = Project.new(self.name, self.id)
+    @@projects[self.id] = Project.new(self.title, self.id)
   end
 
   def ==(project_to_compare)
-    self.name() == project_to_compare.name()
+    self.title() == project_to_compare.title()
   end
 
   def self.clear
@@ -28,8 +28,8 @@ class Project
     @@projects[id]
   end
 
-  def update(name)
-    @name = name
+  def update(title)
+    @title = title
   end
 
   def delete

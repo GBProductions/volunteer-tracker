@@ -29,8 +29,8 @@ get('/projects/:id') do
 end
 
 post ('/projects') do
-  name = params[:project_name]
-  project = Project.new(name, nil)
+  title = params[:project_title]
+  project = Project.new(title, nil)
   project.save()
   @projects = Project.all()
   erb(:projects)
@@ -43,7 +43,7 @@ end
 
 patch('/projects/:id') do
   @project = Project.find(params[:id].to_i())
-  @project.update(params[:name])
+  @project.update(params[:title])
   @projects = Project.all
   erb(:projects)
 end
@@ -60,8 +60,8 @@ get('/custom_route') do
 end
 
 post('/projects') do
-  name = params[:project_name]
-  project = Project.new(name, nil)
+  title = params[:project_title]
+  project = Project.new(title, nil)
   project.save()
   @projects = Projects.all()
   erb(:projects)
@@ -74,7 +74,7 @@ end
 
 post('/projects/:id/volunteers') do
   @project = Project.find(params[:id].to_i())
-  volunteer = Volunteer.new(params[:volunteer_name], @project.id, nil)
+  volunteer = Volunteer.new(params[:volunteer_title], @project.id, nil)
   volunteer.save()
   erb(:project)
 end
@@ -82,7 +82,7 @@ end
 patch('/projects/:id/volunteers/:volunteer_id') do
   @project = Project.find(params[:id].to_i())
   volunteer = Volunteer.find(params[:volunteer_id].to_i())
-  volunteer.update(params[:name], @project.id)
+  volunteer.update(params[:title], @project.id)
   erb(:project)
 end
 

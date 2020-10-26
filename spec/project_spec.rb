@@ -8,11 +8,11 @@ describe Project do
     end
   end
 
-# #   context '#id' do
-# #     it 'returns the id of the project before saving project' do
-# #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
-# #       expect(project.id).to eq nil
-# #     end
+  context '#id' do
+    it 'returns the id of the project before saving project' do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      expect(project.id).to eq nil
+    end
 
 # #     it 'returns the id of the project after saving project' do
 # #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
@@ -65,9 +65,9 @@ describe Project do
 # #     it 'returns all projects for a specific project' do
 # #       project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
 # #       project.save
-# #       project1 = project.new({:name => 'Jasmine', :project_id => project.id, :id => nil})
+# #       project1 = project.new({:title => 'Jasmine', :project_id => project.id, :id => nil})
 # #       project1.save
-# #       project2 = project.new({:name => 'Joe', :project_id => project.id, :id => nil})
+# #       project2 = project.new({:title => 'Joe', :project_id => project.id, :id => nil})
 # #       project2.save
 # #       expect(project.projects).to eq [project1, project2]
 # #     end
@@ -89,5 +89,5 @@ describe Project do
 # #       project.delete
 # #       expect(Project.all).to eq []
 # #     end
-# #   end
+  end
 end
