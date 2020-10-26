@@ -15,13 +15,13 @@ describe Volunteer do
     end
   end
 
-#   describe '#==' do
-#     it 'checks for equality based on the title of a volunteer' do
-#       volunteer1 = Volunteer.new({:title => 'Jane', :project_id => 1, :id => nil})
-#       volunteer2 = Volunteer.new({:title => 'Jane', :project_id => 1, :id => nil})
-#       expect(volunteer1 == volunteer2).to eq true
-#     end
-#   end
+  describe '#==' do
+    it 'checks for equality based on the title of a volunteer' do
+      volunteer1 = Volunteer.new({:title => 'Jane', :project_id => 1, :id => nil})
+      volunteer2 = Volunteer.new({:title => 'Jane', :project_id => 1, :id => nil})
+      expect(volunteer1 == volunteer2).to eq true
+    end
+  end
 
 #   context '.all' do
 #     it 'is empty to start' do
