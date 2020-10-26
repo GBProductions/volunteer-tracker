@@ -19,7 +19,8 @@ class Project
   end
 
   def save
-    @@projects[self.id] = Project.new(self.title, self.id)
+    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    @id = result.first().fetch("id").to_i
   end
 
   def ==(project_to_compare)
