@@ -1,4 +1,4 @@
-# _project Tracker_
+# _Project Tracker_
 
 #### _This program will track projects: it will say what projects they are working on for a non-profit. October 9th 2020_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-_project Tracker allows non-profit employees to track what project they are currently assigned to._
+_Project Tracker allows non-profit employees to track what project they are currently assigned to._
 
 ## Setup/Installation Requirements
 
