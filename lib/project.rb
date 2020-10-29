@@ -48,6 +48,6 @@ class Project
   end
 
   def volunteers
-    Volunteer.find_by_project(@project_id)
+    Volunteer.find_by_project(@id)
   end
 end
